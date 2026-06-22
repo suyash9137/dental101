@@ -82,7 +82,7 @@ export default function ServicesGrid() {
         <motion.div
           variants={fadeUp}
           initial={false}
-          animate={isVisible}
+          animate={isVisible ? "animate" : "initial"}
           className="text-center mb-12 md:mb-16"
         >
           <h2 className="font-headline-md text-headline-md text-primary mb-4">
@@ -96,7 +96,7 @@ export default function ServicesGrid() {
         <motion.div
           variants={staggerContainer}
           initial={false}
-          animate={isVisible}
+          animate={isVisible ? "animate" : "initial"}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
         >
           {services.map((service, index) => (
@@ -104,7 +104,7 @@ export default function ServicesGrid() {
               key={service.title}
               variants={staggerChild}
               initial={false}
-              animate={isVisible}
+              animate={isVisible ? "animate" : "initial"}
               className="bg-surface rounded-xl p-6 border border-outline-variant/30 soft-shadow hover:-translate-y-1 transition-transform duration-300 group flex flex-col h-full"
             >
               <div className="w-12 h-12 rounded-full bg-secondary-fixed/50 flex items-center justify-center mb-6 text-primary">

@@ -73,7 +73,7 @@ export default function HeroSection() {
           <motion.div
             variants={fadeUp}
             initial={false}
-            animate={isVisible}
+            animate={isVisible ? "animate" : "initial"}
             className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary-fixed/50 border border-secondary-fixed backdrop-blur-sm mb-6 text-on-secondary-fixed-variant font-label-bold text-label-bold"
           >
             <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>
@@ -86,7 +86,7 @@ export default function HeroSection() {
           <motion.h1
             variants={fadeUp}
             initial={false}
-            animate={isVisible}
+            animate={isVisible ? "animate" : "initial"}
             className="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-6 text-gradient"
           >
             Compassionate care,<br /> exceptional results.
@@ -96,7 +96,7 @@ export default function HeroSection() {
           <motion.p
             variants={fadeUp}
             initial={false}
-            animate={isVisible}
+            animate={isVisible ? "animate" : "initial"}
             className="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-lg"
           >
             Experience a new standard of dentistry where clinical expertise meets boutique comfort. We craft lasting, healthy smiles with meticulous attention to detail.
@@ -106,7 +106,7 @@ export default function HeroSection() {
           <motion.div
             variants={fadeUp}
             initial={false}
-            animate={isVisible}
+            animate={isVisible ? "animate" : "initial"}
             className="flex flex-col sm:flex-row gap-4"
           >
             <Link

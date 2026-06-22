@@ -44,7 +44,7 @@ export default function AppointmentCTA() {
         <motion.h2
           variants={fadeUp}
           initial={false}
-          animate={isVisible}
+          animate={isVisible ? "animate" : "initial"}
           className="font-headline-md text-headline-md mb-6 max-w-2xl mx-auto"
         >
           Ready to Transform Your Smile?
@@ -53,7 +53,7 @@ export default function AppointmentCTA() {
         <motion.p
           variants={fadeUp}
           initial={false}
-          animate={isVisible}
+          animate={isVisible ? "animate" : "initial"}
           className="font-body-lg text-body-lg text-on-primary/80 mb-10 max-w-xl mx-auto"
         >
           Schedule a private consultation today and take the first step towards achieving optimal oral health and aesthetic perfection.
@@ -62,7 +62,7 @@ export default function AppointmentCTA() {
         <motion.div
           variants={fadeUp}
           initial={false}
-          animate={isVisible}
+          animate={isVisible ? "animate" : "initial"}
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
           <Link

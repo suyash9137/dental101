@@ -52,14 +52,14 @@ export default function BeforeAfterGallery() {
         <motion.div
           variants={{ initial: { x: '100%', opacity: 0 }, animate: { x: 0, opacity: 1, transition: { duration: 0.8, ease: 'easeOut' } } }}
           initial={false}
-          animate={isVisible}
+          animate={isVisible ? "animate" : "initial"}
           className="flex flex-col md:flex-row gap-12 items-center"
         >
           {/* Image */}
           <motion.div
             variants={fadeUp}
             initial={false}
-            animate={isVisible}
+            animate={isVisible ? "animate" : "initial"}
             className="w-full md:w-1/2"
           >
             <div className="relative rounded-xl overflow-hidden shadow-xl border border-outline-variant/20">
@@ -76,7 +76,7 @@ export default function BeforeAfterGallery() {
           <motion.div
             variants={fadeUp}
             initial={false}
-            animate={isVisible}
+            animate={isVisible ? "animate" : "initial"}
             className="w-full md:w-1/2 lg:pl-12"
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-fixed/30 text-on-secondary-fixed-variant font-label-bold text-label-bold mb-4">
@@ -87,7 +87,7 @@ export default function BeforeAfterGallery() {
             <motion.h2
               variants={fadeUp}
               initial={false}
-              animate={isVisible}
+              animate={isVisible ? "animate" : "initial"}
               className="font-headline-md text-headline-md text-primary mb-6"
             >
               Visualizing Dental Excellence
@@ -96,7 +96,7 @@ export default function BeforeAfterGallery() {
             <motion.p
               variants={fadeUp}
               initial={false}
-              animate={isVisible}
+              animate={isVisible ? "animate" : "initial"}
               className="font-body-lg text-body-lg text-on-surface-variant mb-6"
             >
               We believe the results speak for themselves. Our clinical portfolio showcases the meticulous artistry and technical precision that defines SmileCraft Dental. Every smile is a testament to personalized, high-end care.
@@ -105,14 +105,14 @@ export default function BeforeAfterGallery() {
             <motion.ul
               variants={staggerContainer}
               initial={false}
-              animate={isVisible}
+              animate={isVisible ? "animate" : "initial"}
               className="space-y-4 mb-8"
             >
               <motion.li
                 key="1"
                 variants={staggerChild}
                 initial={false}
-                animate={isVisible}
+                animate={isVisible ? "animate" : "initial"}
                 className="flex items-start gap-3"
               >
                 <span className="material-symbols-outlined text-primary mt-0.5">check_circle</span>
@@ -125,7 +125,7 @@ export default function BeforeAfterGallery() {
                 key="2"
                 variants={staggerChild}
                 initial={false}
-                animate={isVisible}
+                animate={isVisible ? "animate" : "initial"}
                 className="flex items-start gap-3"
               >
                 <span className="material-symbols-outlined text-primary mt-0.5">check_circle</span>
@@ -138,7 +138,7 @@ export default function BeforeAfterGallery() {
                 key="3"
                 variants={staggerChild}
                 initial={false}
-                animate={isVisible}
+                animate={isVisible ? "animate" : "initial"}
                 className="flex items-start gap-3"
               >
                 <span className="material-symbols-outlined text-primary mt-0.5">check_circle</span>
@@ -152,7 +152,7 @@ export default function BeforeAfterGallery() {
               href="#"
               variants={{ initial: { scale: 0.95, opacity: 0 }, animate: { scale: 1, opacity: 1, transition: { duration: 0.5, ease: 'easeOut' } } }}
               initial={false}
-              animate={isVisible}
+              animate={isVisible ? "animate" : "initial"}
               className="font-label-bold text-label-bold bg-surface border border-outline text-on-surface rounded-full px-6 py-3 hover:bg-surface-container-low transition-colors inline-block"
             >
               View Full Gallery

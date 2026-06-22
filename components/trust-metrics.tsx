@@ -47,14 +47,14 @@ export default function TrustMetrics() {
         <motion.div
           variants={staggerContainer}
           initial={false}
-          animate={isVisible}
+          animate={isVisible ? "animate" : "initial"}
           className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 divide-y md:divide-y-0 md:divide-x divide-outline-variant/20"
         >
           {/* Patient Rating */}
           <motion.div
             variants={staggerChild}
             initial={false}
-            animate={isVisible}
+            animate={isVisible ? "animate" : "initial"}
             className="flex flex-col items-center text-center pt-4 md:pt-0"
           >
             <span className="font-display-lg-mobile text-display-lg-mobile text-primary font-semibold">
@@ -69,7 +69,7 @@ export default function TrustMetrics() {
           <motion.div
             variants={staggerChild}
             initial={false}
-            animate={isVisible}
+            animate={isVisible ? "animate" : "initial"}
             className="flex flex-col items-center text-center pt-8 md:pt-0"
           >
             <span className="font-display-lg-mobile text-display-lg-mobile text-primary font-semibold">
@@ -84,7 +84,7 @@ export default function TrustMetrics() {
           <motion.div
             variants={staggerChild}
             initial={false}
-            animate={isVisible}
+            animate={isVisible ? "animate" : "initial"}
             className="flex flex-col items-center text-center pt-8 md:pt-0"
           >
             <span className="font-display-lg-mobile text-display-lg-mobile text-primary font-semibold">
