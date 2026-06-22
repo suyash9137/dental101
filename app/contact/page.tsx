@@ -395,7 +395,7 @@ export default function Contact() {
                 <div
                   className="absolute inset-0 bg-cover bg-center w-full h-full opacity-60 group-hover:opacity-80 transition-opacity duration-500"
                   data-alt="A stylized, minimalist street map centered on a medical district in New York City, using a refined color palette of deep navy blues, soft greys, and pristine whites, conveying a clean, high-end corporate aesthetic."
-                  style={{ backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuDUo2sA9UiIthuwxzBH7u6elbHT2-xTcxF_sWpw94pOmvyttdVny5zfU8SIuWyy9GWZTB0YLPuF4wc0IOcoq9eWPaXzdHQwQvqNwHmu5hVyqNpAoiguuGG6OEt-RnuxyYqGmP0BxCJKKTzpc-sXGdesvFREvMYqrp9aHqB7UaySPNTE8aKj9nkVeDdH0uUgPfVUkkdtX86KakhH2_QxcNE6AoWmqOb3GhVUkioWx1-M2NweaTCsAVibe5e5NbhlxE2qdVcOScOLxKlq")' }}
+                  style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&q=80")' }}
                 ></div>
                 <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-500"></div>
                 {/* Marker */}

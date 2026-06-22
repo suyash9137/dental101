@@ -46,7 +46,7 @@ export default function Specialists() {
       title: 'Lead Dentist',
       specialty: 'Cosmetic & Restorative Dentistry',
       bio: 'Dr. Sharma has over 15 years of experience in cosmetic dentistry, specializing in veneers, smile makeovers, and full-mouth reconstructions. She graduated from Mumbai University and completed advanced training in aesthetic dentistry at the Los Angeles Institute for Clinical Dentistry.',
-      image: 'https://lh3.googleusercontent.com/aida/AP1WRLvV0tqoKnaxwAhmlYQUkVRwXM-renrFxxZ5Rn3RO7AqGkC1Dl6WWPVuOy40Aswh2zKAQLtFl1RS5Ndbl2wV5QD5HnsbmEEXoVmhhJex2Cj2mrOh_uJxJYBJbfqT2fW1kNiq_5MGBRZr4Sf9zNtLjiaXoIYwSJJC9ip6vO7W9tdDyVPSH6WqbC8d_1jARSBeXVij7BQokQgC-RB93Xc7gVYhG8YyYI-eT2mvVJWFZnZ2Pp8l34z52ISWxOTp',
+      image: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&q=80',
     },
     {
       id: 2,
@@ -54,7 +54,7 @@ export default function Specialists() {
       title: 'Oral Surgeon & Implant Specialist',
       specialty: 'Dental Implants & Oral Surgery',
       bio: 'Dr. Mehta is a board-certified oral surgeon with expertise in dental implant placement, bone grafting, and complex oral surgery procedures. He completed his oral surgery residency at Tata Memorial Hospital and has placed over 2,000 successful dental implants.',
-      image: 'https://lh3.googleusercontent.com/aida/AP1WRLtxhoNPu3s3FxIyISKb3ShC82Y9kbNj0PIUAepxmH_WeFG27wWUE1x0tgPfQSM4RsFFqOrHpbT7elYgu18Kqa-6wVsaTc9ECDPAugWQGMfyKqK5cDhE0O3r1vZ2kop5_FfGV-A6G6bTWHRVm2XRVqBqGN9skYMlzKUtzzO_GzSa-OqwhtNoZfeTEUgxgkYnRLMBpeNDlqe1HOJUHavwkFoNxa-gJBtHj2d0y49oGWOadHsVoVd_mZmM2p0',
+      image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&q=80',
     },
     {
       id: 3,
@@ -62,7 +62,7 @@ export default function Specialists() {
       title: 'Orthodontist',
       specialty: 'Orthodontics & Invisalign',
       bio: 'Dr. Patel specializes in orthodontic treatment for children and adults, including traditional braces and Invisalign clear aligners. She is a certified Invisalign provider and has helped hundreds of patients achieve straighter, healthier smiles.',
-      image: 'https://lh3.googleusercontent.com/aida/AP1WRLvV0tqoKnaxwAhmlYQUkVRwXM-renrFxxZ5Rn3RO7AqGkC1Dl6WWPVuOy40Aswh2zKAQLtFl1RS5Ndbl2wV5QD5HnsbmEEXoVmhhJex2Cj2mrOh_uJxJYBJbfqT2fW1kNiq_5MGBRZr4Sf9zNtLjiaXoIYwSJJC9ip6vO7W9tdDyVPSH6WqbC8d_1jARSBeXVij7BQokQgC-RB93Xc7gVYhG8YyYI-eT2mvVJWFZnZ2Pp8l34z52ISWxOTp',
+      image: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80',
     },
     {
       id: 4,
@@ -70,7 +70,7 @@ export default function Specialists() {
       title: 'Pediatric Dentist',
       specialty: 'Pediatric Dentistry',
       bio: 'Dr. Singh focuses on creating positive dental experiences for children, emphasizing preventive care and education. He uses gentle techniques and a child-friendly approach to ensure young patients feel comfortable and safe during their visits.',
-      image: 'https://lh3.googleusercontent.com/aida/AP1WRLvV0tqoKnaxwAhmlYQUkVRwXM-renrFxxZ5Rn3RO7AqGkC1Dl6WWPVuOy40Aswh2zKAQLtFl1RS5Ndbl2wV5QD5HnsbmEEXoVmhhJex2Cj2mrOh_uJxJYBJbfqT2fW1kNiq_5MGBRZr4Sf9zNtLjiaXoIYwSJJC9ip6vO7W9tdDyVPSH6WqbC8d_1jARSBeXVij7BQokQgC-RB93Xc7gVYhG8YyYI-eT2mvVJWFZnZ2Pp8l34z52ISWxOTp',
+      image: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&q=80',
     },
   ];
 
@@ -87,7 +87,7 @@ export default function Specialists() {
         >
           {/* Background Image */}
           <div className="absolute inset-0 z-0">
-            <div className="bg-cover bg-center w-full h-full opacity-40" style={{ backgroundImage: 'url("https://lh3.googleusercontent.com/aida/AP1WRLvV0tqoKnaxwAhmlYQUkVRwXM-renrFxxZ5Rn3RO7AqGkC1Dl6WWPVuOy40Aswh2zKAQLtFl1RS5Ndbl2wV5QD5HnsbmEEXoVmhhJex2Cj2mrOh_uJxJYBJbfqT2fW1kNiq_5MGBRZr4Sf9zNtLjiaXoIYwSJJC9ip6vO7W9tdDyVPSH6WqbC8d_1jARSBeXVij7BQokQgC-RB93Xc7gVYhG8YyYI-eT2mvVJWFZnZ2Pp8l34z52ISWxOTp")' }}></div>
+            <div className="bg-cover bg-center w-full h-full opacity-40" style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&q=80")' }}></div>
             <div className="absolute inset-0 bg-gradient-to-r from-surface via-surface/90 to-surface/20"></div>
           </div>
 

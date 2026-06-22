@@ -52,7 +52,7 @@ export default function CosmeticDentistry() {
         >
           {/* Background Image */}
           <div className="absolute inset-0 z-0">
-            <div className="bg-cover bg-center w-full h-full opacity-40" style={{ backgroundImage: 'url("https://lh3.googleusercontent.com/aida/AP1WRLtxhoNPu3s3FxIyISKb3ShC82Y9kbNj0PIUAepxmH_WeFG27wWUE1x0tgPfQSM4RsFFqOrHpbT7elYgu18Kqa-6wVsaTc9ECDPAugWQGMfyKqK5cDhE0O3r1vZ2kop5_FfGV-A6G6bTWHRVm2XRVqBqGN9skYMlzKUtzzO_GzSa-OqwhtNoZfeTEUgxgkYnRLMBpeNDlqe1HOJUHavwkFoNxa-gJBtHj2d0y49oGWOadHsVoVd_mZmM2p0")' }}></div>
+            <div className="bg-cover bg-center w-full h-full opacity-40" style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&q=80")' }}></div>
             <div className="absolute inset-0 bg-gradient-to-r from-surface via-surface/90 to-surface/20"></div>
           </div>
 
@@ -251,7 +251,7 @@ export default function CosmeticDentistry() {
                 <img
                   alt="Before and after porcelain veneers treatment"
                   className="w-full h-48 object-cover"
-                  src="https://lh3.googleusercontent.com/aida/AP1WRLtxhoNPu3s3FxIyISKb3ShC82Y9kbNj0PIUAepxmH_WeFG27wWUE1x0tgPfQSM4RsFFqOrHpbT7elYgu18Kqa-6wVsaTc9ECDPAugWQGMfyKqK5cDhE0O3r1vZ2kop5_FfGV-A6G6bTWHRVm2XRVqBqGN9skYMlzKUtzzO_GzSa-OqwhtNoZfeTEUgxgkYnRLMBpeNDlqe1HOJUHavwkFoNxa-gJBtHj2d0y49oGWOadHsVoVd_mZmM2p0"
+                  src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80"
                 >
                   </img>
                   <div className="absolute inset-0 flex items-center justify-center bg-black/30 text-on-primary/0 hover:bg-black/30 hover:text-on-primary/100 transition-all duration-300 opacity-0 group-hover:opacity-100">
@@ -270,7 +270,7 @@ export default function CosmeticDentistry() {
                   <img
                     alt="Before and after teeth whitening treatment"
                     className="w-full h-48 object-cover"
-                    src="https://lh3.googleusercontent.com/aida/AP1WRLvV0tqoKnaxwAhmlYQUkVRwXM-renrFxxZ5Rn3RO7AqGkC1Dl6WWPVuOy40Aswh2zKAQLtFl1RS5Ndbl2wV5QD5HnsbmEEXoVmhhJex2Cj2mrOh_uJxJYBJbfqT2fW1kNiq_5MGBRZr4Sf9zNtLjiaXoIYwSJJC9ip6vO7W9tdDyVPSH6WqbC8d_1jARSBeXVij7BQokQgC-RB93Xc7gVYhG8YyYI-eT2mvVJWFZnZ2Pp8l34z52ISWxOTp"
+                    src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&q=80"
                   >
                   </img>
                   <div className="absolute inset-0 flex items-center justify-center bg-black/30 text-on-primary/0 hover:bg-black/30 hover:text-on-primary/100 transition-all duration-300 opacity-0 group-hover:opacity-100">
@@ -289,7 +289,7 @@ export default function CosmeticDentistry() {
                   <img
                     alt="Before and after cosmetic bonding treatment"
                     className="w-full h-48 object-cover"
-                    src="https://lh3.googleusercontent.com/aida/AP1WRLtxhoNPu3s3FxIyISKb3ShC82Y9kbNj0PIUAepxmH_WeFG27wWUE1x0tgPfQSM4RsFFqOrHpbT7elYgu18Kqa-6wVsaTc9ECDPAugWQGMfyKqK5cDhE0O3r1vZ2kop5_FfGV-A6G6bTWHRVm2XRVqBqGN9skYMlzKUtzzO_GzSa-OqwhtNoZfeTEUgxgkYnRLMBpeNDlqe1HOJUHavwkFoNxa-gJBtHj2d0y49oGWOadHsVoVd_mZmM2p0"
+                    src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&q=80"
                   >
                   </img>
                   <div className="absolute inset-0 flex items-center justify-center bg-black/30 text-on-primary/0 hover:bg-black/30 hover:text-on-primary/100 transition-all duration-300 opacity-0 group-hover:opacity-100">
