@@ -6,33 +6,52 @@ import { useEffect, useState } from 'react';
 
 // Variants for animations
 const fadeUp: Variants = {
-  initial: { y: 20, opacity: 0 },
-  animate: { y: 0, opacity: 1, transition: { duration: 0.6, ease: 'easeOut' } },
+  initial: { y: 30, opacity: 0 },
+  animate: { y: 0, opacity: 1, transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] } },
 };
 
 const fadeIn: Variants = {
   initial: { opacity: 0 },
-  animate: { opacity: 1, transition: { duration: 0.6, ease: 'easeOut' } },
+  animate: { opacity: 1, transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] } },
 };
 
 const slideUp: Variants = {
-  initial: { y: 20, opacity: 0 },
-  animate: { y: 0, opacity: 1, transition: { duration: 0.6, ease: 'easeOut' } },
+  initial: { y: 30, opacity: 0 },
+  animate: { y: 0, opacity: 1, transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] } },
 };
 
 const staggerContainer: Variants = {
   initial: {},
   animate: {
     transition: {
-      staggerChildren: 0.1,
+      staggerChildren: 0.12,
+      delayChildren: 0.2,
     },
   },
 };
 
 const staggerChild: Variants = {
-  initial: { y: 20, opacity: 0 },
-  animate: { y: 0, opacity: 1, transition: { duration: 0.6, ease: 'easeOut' } },
+  initial: { y: 30, opacity: 0 },
+  animate: { y: 0, opacity: 1, transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] } },
 };
+
+const floatAnimation: Variants = {
+  initial: { y: 0, scale: 1 },
+  animate: {
+    y: [0, -8, 0],
+    scale: [1, 1.02, 1],
+    transition: { duration: 4, repeat: Infinity, ease: "easeInOut" }
+  }
+};
+
+const pulseButton: Variants = {
+  initial: { scale: 1 },
+  animate: {
+    scale: [1, 1.05, 1],
+    transition: { duration: 2, repeat: Infinity, ease: "easeInOut" }
+  }
+};
+
 
 export default function HeroSection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -111,14 +130,14 @@ export default function HeroSection() {
           >
             <Link
               href="/book-appointment"
-              className="font-label-bold text-label-bold bg-primary text-on-primary rounded-full px-8 py-4 hover:bg-primary-container transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-center flex items-center justify-center gap-2"
+              className="font-label-bold text-label-bold bg-primary text-on-primary rounded-full px-8 py-4 hover:bg-primary-container transition-all duration-500 shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-center flex items-center justify-center gap-2"
             >
               Book Appointment
               <span className="material-symbols-outlined text-sm">arrow_forward</span>
             </Link>
 
             <button
-              className="font-label-bold text-label-bold bg-surface border border-outline-variant text-primary rounded-full px-8 py-4 hover:bg-surface-container-low transition-all duration-300 text-center flex items-center justify-center gap-2"
+              className="font-label-bold text-label-bold bg-surface border border-outline-variant text-primary rounded-full px-8 py-4 hover:bg-surface-container-low transition-all duration-500 text-center flex items-center justify-center gap-2"
             >
               <span className="material-symbols-outlined text-primary text-xl">play_circle</span>
               See how we work

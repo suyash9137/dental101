@@ -7,30 +7,33 @@ import Link from 'next/link';
 
 // Variants for animations
 const fadeUp: Variants = {
-  initial: { y: 20, opacity: 0 },
-  animate: { y: 0, opacity: 1, transition: { duration: 0.6, ease: 'easeOut' } },
+  initial: { y: 30, opacity: 0 },
+  animate: { y: 0, opacity: 1, transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] } },
 };
 
 const staggerContainer: Variants = {
   initial: {},
   animate: {
     transition: {
-      staggerChildren: 0.1,
+      staggerChildren: 0.12,
+      delayChildren: 0.2,
     },
   },
 };
 
 const staggerChild: Variants = {
-  initial: { y: 20, opacity: 0 },
-  animate: { y: 0, opacity: 1, transition: { duration: 0.6, ease: 'easeOut' } },
+  initial: { y: 30, opacity: 0 },
+  animate: { y: 0, opacity: 1, transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] } },
 };
 
-const hoverLift: Variants = {
-  initial: {},
+
+const floatIcon: Variants = {
+  initial: { y: 0, scale: 1 },
   animate: {
-    y: 0,
-    transition: { type: 'spring', stiffness: 300, damping: 30 },
-  },
+    y: [0, -8, 0],
+    scale: [1, 1.05, 1],
+    transition: { duration: 3, repeat: Infinity, ease: "easeInOut" }
+  }
 };
 
 export default function ServicesGrid() {
@@ -105,13 +108,19 @@ export default function ServicesGrid() {
               variants={staggerChild}
               initial={false}
               animate={isVisible ? "animate" : "initial"}
-              className="bg-surface rounded-xl p-6 border border-outline-variant/30 soft-shadow hover:-translate-y-1 transition-transform duration-300 group flex flex-col h-full"
+              className="bg-surface rounded-xl p-6 border border-outline-variant/30 shadow-soft hover-lift-medium float-gentle group flex flex-col h-full transition-all duration-500"
+              whileHover={{ y: -4, scale: 1.02 }}
+              whileTap={{ y: -2, scale: 0.98 }}
+              transition={{ type: 'spring', stiffness: 300, damping: 30 }}
             >
-              <div className="w-12 h-12 rounded-full bg-secondary-fixed/50 flex items-center justify-center mb-6 text-primary">
+              <motion.div
+                variants={floatIcon}
+                className="w-12 h-12 rounded-full bg-secondary-fixed/50 flex items-center justify-center mb-6 text-primary"
+              >
                 <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>
                   {service.icon}
                 </span>
-              </div>
+              </motion.div>
 
               <h3 className="font-headline-sm text-headline-sm text-primary mb-3 flex-grow">
                 {service.title}

@@ -21,6 +21,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+      </head>
       <body className={`${manrope.variable} ${sourceSerif4.variable} ${manrope.className} bg-surface text-on-background`}>
         {/* MotionConfig to reduce motion for users who prefer it */}
         <MotionConfig reducedMotion="user">

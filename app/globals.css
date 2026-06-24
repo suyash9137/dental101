@@ -2,24 +2,192 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom animations for Framer Motion */
+/* Enhanced Custom Utilities */
 @layer utilities {
-  /* Glassmorphism effect */
+  /* Enhanced Glassmorphism effect */
+  .glass-panel {
+    @apply bg-white/80 backdrop-blur-lg border border-white/20 shadow-soft-glass;
+  }
+
+  .glass-panel-dark {
+    @apply bg-gray-900/50 backdrop-blur-lg border border-gray-600/30;
+  }
+
+  /* Enhanced Shadow System */
+  .shadow-soft {
+    @apply shadow-[0_2px_8px_rgba(33,37,41,0.06)];
+  }
+
+  .shadow-medium {
+    @apply shadow-[0_4px_16px_rgba(33,37,41,0.08)];
+  }
+
+  .shadow-deep {
+    @apply shadow-[0_8px_32px_rgba(33,37,41,0.12)];
+  }
+
+  .shadow-dental {
+    @apply shadow-[0_12px_48px_rgba(33,37,41,0.15)];
+  }
+
+  /* Enhanced Hover Effects */
+  .hover-lift-soft {
+    @apply transition-transform transition-shadow duration-300 ease-out;
+  }
+
+  .hover-lift-soft:hover {
+    @apply -translate-y-1 shadow-medium;
+  }
+
+  .hover-lift-medium {
+    @apply transition-transform transition-shadow duration-500 ease-out;
+  }
+
+  .hover-lift-medium:hover {
+    @apply -translate-y-2 shadow-deep;
+  }
+
+  .hover-lift-lift {
+    @apply transition-transform transition-shadow duration-500 ease-out;
+  }
+
+  .hover-lift-lift:hover {
+    @apply -translate-y-3 shadow-dental;
+  }
+
+  /* Floating Animation for Cards */
+  .float-gentle {
+    @apply transition-transform duration-500 ease-in-out;
+  }
+
+  .float-gentle:hover {
+    @apply translate-y-[-4px] shadow-deep;
+  }
+
+  /* Enhanced Text Effects */
+  .text-gradient-primary {
+    @apply bg-gradient-to-br from-dental-blue to-dental-green bg-clip-text text-transparent;
+  }
+
+  .text-gradient-secondary {
+    @apply bg-gradient-to-br from-dental-gold to-dental-silver bg-clip-text text-transparent;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 8px rgba(33, 150, 243, 0.3);
+  }
+
+  /* Premium Card Styles */
+  .card-premium {
+    @apply bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-xl shadow-soft hover:shadow-medium hover:-translate-y-1 transition-all duration-500;
+  }
+
+  .card-premium:hover {
+    @apply shadow-deep;
+  }
+
+  /* Interactive Elements */
+  .btn-primary {
+    @apply bg-dental-blue text-white font-medium px-6 py-3 rounded-lg transition-all duration-300 hover:bg-dental-blue/90 hover:-translate-y-1 shadow-medium hover:shadow-deep;
+  }
+
+  .btn-outline {
+    @apply border border-dental-blue text-dental-blue font-medium px-6 py-3 rounded-lg transition-all duration-300 hover:bg-dental-blue/10 hover:-translate-y-1;
+  }
+
+
+
+  .btn-secondary {
+    @apply bg-dental-gold text-white font-medium px-6 py-3 rounded-lg transition-all duration-300 hover:bg-dental-gold/90 hover:-translate-y-1 shadow-medium hover:shadow-deep;
+  }
+
+  /* Image Effects */
+  .image-hover-lift {
+    @apply transition-transform duration-500 ease-in-out overflow-hidden;
+  }
+
+  .image-hover-lift:hover {
+    @apply scale-105;
+  }
+
+  .image-hover-lift-child {
+    @apply transition-transform duration-700 ease-in-out;
+  }
+
+  .image-hover-lift:hover .image-hover-lift-child {
+    @apply scale-105;
+  }
+
+  /* Enhanced Scrollbar */
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--muted));
+    border-radius: 3px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background-color: hsl(var(--muted-foreground));
+  }
+
+  /* Animation Variants */
+  .fade-up {
+    @apply opacity-0 translate-y-4 transition-opacity transition-transform duration-500 ease-out;
+  }
+
+  .fade-up.visible {
+    @apply opacity-100 translate-y-0;
+  }
+
+  .fade-in {
+    @apply opacity-0 transition-opacity duration-500 ease-out;
+  }
+
+  .fade-in.visible {
+    @apply opacity-100;
+  }
+
+  .slide-in-right {
+    @apply opacity-0 translate-x-4 transition-opacity transition-transform duration-500 ease-out;
+  }
+
+  .slide-in-right.visible {
+    @apply opacity-100 translate-x-0;
+  }
+
+  .scale-in {
+    @apply opacity-0 scale-95 transition-opacity transition-transform duration-500 ease-out;
+  }
+
+  .scale-in.visible {
+    @apply opacity-100 scale-100;
+  }
+
+  /* Pulse Animation */
+  .pulse-subtle {
+    @apply animate-pulse;
+  }
+
+  /* Preserve existing classes for backward compatibility */
   .glass-panel {
     @apply bg-background/70 backdrop-blur-md border border-outline/30;
   }
 
-  /* Soft shadow for cards */
   .soft-shadow {
     @apply shadow-[0_10px_30px_-10px_rgba(43,45,44,0.08)];
   }
 
-  /* Ambient shadow */
   .ambient-shadow {
     @apply shadow-[0_10px_30px_rgba(43,45,44,0.06)];
   }
 
-  /* Hover lift effect */
   .hover-lift {
     @apply transition-transform transition-shadow duration-300;
   }
@@ -28,7 +196,6 @@
     @apply -translate-y-1 shadow-[0_15px_40px_rgba(43,45,44,0.1)];
   }
 
-  /* Custom scrollbar */
   .hide-scrollbar::-webkit-scrollbar {
     display: none;
   }
@@ -38,12 +205,10 @@
     scrollbar-width: none;
   }
 
-  /* Text gradient */
   .text-gradient {
     @apply bg-gradient-to-br from-primary to-surface-tint bg-clip-text text-transparent;
   }
 
-  /* Scroll progress bar */
   .scroll-progress-bar {
     --inactive-bg: hsl(var(--secondary));
     --active-bg: hsl(var(--primary));
@@ -58,7 +223,6 @@
     transition: width 0.3s ease;
   }
 
-  /* Parallax effect */
   .parallax-bg {
     background-attachment: fixed;
     background-position: center;
@@ -66,7 +230,6 @@
     background-size: cover;
   }
 
-  /* Staggered animation variants */
   .stagger-child {
     opacity: 0;
     transform: translateY(20px);
@@ -78,51 +241,99 @@
   }
 }
 
-/* Mobile-first responsive utilities */
+/* Enhanced Dental-Inspired Color System */
 @layer base {
   :root {
-    --background: 30 20% 97%;
-    --foreground: 150 2% 17%;
-    --card: 30 20% 97%;
-    --card-foreground: 150 2% 17%;
-    --popover: 30 20% 97%;
-    --popover-foreground: 150 2% 17%;
-    --primary: 158 20% 37%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 27 24% 43%;
-    --secondary-foreground: 0 0% 100%;
-    --muted: 40 20% 90%;
-    --muted-foreground: 150 2% 40%;
-    --accent: 40 20% 90%;
-    --accent-foreground: 158 20% 37%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 150 2% 80%;
-    --input: 150 2% 80%;
-    --ring: 158 20% 37%;
-    --radius: 1rem;
+    /* Primary Colors - Sophisticated Dental Blues */
+    --background: 220 8% 98%; /* Almost white with subtle cool tone */
+    --foreground: 220 8% 12%; /* Deep charcoal for text */
+
+    /* Card & Surface Colors */
+    --card: 220 8% 98%;
+    --card-foreground: 220 8% 12%;
+    --popover: 220 8% 98%;
+    --popover-foreground: 220 8% 12%;
+
+    /* Primary Color - Refined Dental Blue */
+    --primary: 215 25% 19%; /* Deep, sophisticated blue */
+    --primary-foreground: 220 8% 98%; /* White text on primary */
+
+    /* Secondary Color - Warm Metallic Accent */
+    --secondary: 45 30% 55%; /* Warm gold/silver tone */
+    --secondary-foreground: 220 8% 12%; /* Dark text on secondary */
+
+    /* Accent Colors */
+    --accent: 150 20% 95%; /* Soft mint/green for accents */
+    --accent-foreground: 150 20% 25%; /* Darker mint for text */
+
+    /* Muted Colors */
+    --muted: 220 8% 92%; /* Light gray-blue */
+    --muted-foreground: 220 8% 45%; /* Medium gray text */
+
+    /* Destructive/Error Colors */
+    --destructive: 0 72% 50%; /* Soft red */
+    --destructive-foreground: 220 8% 98%; /* White text on destructive */
+
+    /* Border & Input Colors */
+    --border: 220 8% 85%; /* Soft border */
+    --input: 220 8% 85%; /* Input background */
+    --ring: 215 25% 19%; /* Ring matches primary */
+
+    /* Radius */
+    --radius: 0.75rem;
+
+    /* Dental-Specific Accent Colors */
+    --dental-blue: 215 25% 19%; /* Primary brand color */
+    --dental-light-blue: 215 25% 90%; /* Light tint */
+    --dental-green: 150 25% 40%; /* Trust/health green */
+    --dental-green-light: 150 25% 85%; /* Light green tint */
+    --dental-gold: 45 30% 55%; /* Premium metallic accent */
+    --dental-silver: 220 5% 70%; /* Cool metallic accent */
   }
 
   .dark {
-    --background: 150 2% 10%;
-    --foreground: 30 20% 97%;
-    --card: 150 2% 10%;
-    --card-foreground: 30 20% 97%;
-    --popover: 150 2% 10%;
-    --popover-foreground: 30 20% 97%;
-    --primary: 158 20% 60%;
-    --primary-foreground: 150 2% 10%;
-    --secondary: 27 24% 60%;
-    --secondary-foreground: 150 2% 10%;
-    --muted: 150 2% 20%;
-    --muted-foreground: 150 2% 60%;
-    --accent: 150 2% 20%;
-    --accent-foreground: 158 20% 60%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 30 20% 97%;
-    --border: 150 2% 20%;
-    --input: 150 2% 20%;
-    --ring: 158 20% 60%;
+    /* Dark Mode - Sophisticated Dental Theme */
+    --background: 220 8% 8%; /* Very dark blue-gray */
+    --foreground: 220 8% 95%; /* Near white text */
+
+    /* Card & Surface Colors */
+    --card: 220 8% 12%; /* Slightly lighter than background */
+    --card-foreground: 220 8% 95%;
+    --popover: 220 8% 12%;
+    --popover-foreground: 220 8% 95;
+
+    /* Primary Color - Refined Dental Blue (adapted for dark) */
+    --primary: 215 25% 30%; /* Brighter blue for dark mode */
+    --primary-foreground: 220 8% 98%; /* White text */
+
+    /* Secondary Color - Warm Metallic Accent */
+    --secondary: 45 30% 65%; /* Lighter metallic for dark mode */
+    --secondary-foreground: 220 8% 12%; /* Dark text on secondary */
+
+    /* Accent Colors */
+    --accent: 150 20% 15%; /* Darker mint for dark mode */
+    --accent-foreground: 150 20% 90%; /* Light mint text */
+
+    /* Muted Colors */
+    --muted: 220 8% 20%; /* Darker muted */
+    --muted-foreground: 220 8% 60%; /* Lighter muted text */
+
+    /* Destructive/Error Colors */
+    --destructive: 0 72% 40%; /* Softer red for dark mode */
+    --destructive-foreground: 220 8% 98%; /* White text */
+
+    /* Border & Input Colors */
+    --border: 220 8% 25%; /* Darker borders */
+    --input: 220 8% 20%; /* Darker input background */
+    --ring: 215 25% 30%; /* Ring matches primary */
+
+    /* Dental-Specific Accent Colors (dark mode adapted) */
+    --dental-blue: 215 25% 30%; /* Brighter blue for dark mode */
+    --dental-light-blue: 215 25% 15%; /* Very dark blue tint */
+    --dental-green: 150 25% 50%; /* Brighter green for dark mode */
+    --dental-green-light: 150 25% 20%; /* Darker green tint */
+    --dental-gold: 45 30% 70%; /* Lighter metallic for dark mode */
+    --dental-silver: 220 5% 50%; /* Medium metallic accent */
   }
 }
 
@@ -142,4 +353,35 @@ html {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+/* Custom Design Classes from HTML */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+.text-gradient {
+    background: linear-gradient(135deg, #031632 0%, #4e5f7e 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.soft-shadow {
+    box-shadow: 0 10px 30px -10px rgba(3, 22, 50, 0.08);
+}
+.ambient-shadow {
+    box-shadow: 0 10px 30px rgba(26, 43, 72, 0.06);
+}
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 40px rgba(26, 43, 72, 0.1);
+}
+.service-pattern {
+    background-image: radial-gradient(theme('colors.primary-fixed') 1px, transparent 1px);
+    background-size: 20px 20px;
 }

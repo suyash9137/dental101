@@ -40,11 +40,10 @@ const staggerChild: Variants = {
 
 export default function BookAppointment() {
   const [headerScrolled, setHeaderScrolled] = useState(false);
-  const [activeStep, setActiveStep] = useState(1);
-  const [formData, setFormData] = useState({
-    service: 'cosmetic',
+    const [formData, setFormData] = useState({
+    service: '',
     date: '',
-    time: 'afternoon',
+    time: '',
     name: '',
     phone: '',
     email: '',
@@ -70,49 +69,60 @@ export default function BookAppointment() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real app, this would send data to a backend
-    alert('Appointment request submitted! Our team will contact you shortly.');
+    const { service, date, time, name, phone, email } = formData;
+    
+    const serviceMap: Record<string, string> = {
+      cosmetic: 'Cosmetic Dentistry',
+      implant: 'Dental Implants',
+      ortho: 'Orthodontics',
+      general: 'General Care'
+    };
+    
+    const timeMap: Record<string, string> = {
+      morning: 'Morning (8am - 12pm)',
+      afternoon: 'Afternoon (12pm - 4pm)',
+      evening: 'Evening (4pm - 7pm)'
+    };
+
+    const formattedService = serviceMap[service] || service;
+    const formattedTime = timeMap[time] || time;
+    const formattedDate = date ? new Date(date).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) : 'Not selected';
+
+    const message = `Hello SmileCraft Dental,
+
+I would like to request an appointment. Here are my details:
+
+🦷 *Service Requested:* ${formattedService}
+📅 *Preferred Date:* ${formattedDate}
+⏰ *Preferred Time:* ${formattedTime}
+
+👤 *Patient Name:* ${name || 'Not provided'}
+📞 *Phone Number:* ${phone || 'Not provided'}
+✉️ *Email Address:* ${email || 'Not provided'}
+
+Please let me know if you have availability. Thank you!`;
+
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`https://wa.me/919137499107?text=${encodedMessage}`, '_blank');
+    
     // Reset form
     setFormData({
-      service: 'cosmetic',
+      service: '',
       date: '',
-      time: 'afternoon',
+      time: '',
       name: '',
       phone: '',
       email: '',
     });
-    setActiveStep(1);
   };
 
-  const nextStep = () => {
-    if (activeStep < 3) setActiveStep(activeStep + 1);
-  };
-
-  const prevStep = () => {
-    if (activeStep > 1) setActiveStep(activeStep - 1);
-  };
-
+  
+  
   return (
     <>
       <Header scrolled={headerScrolled} />
-      <main className="flex-grow pt-24 md:pt-32 px-4 md:px-6 max-w-3xl mx-auto w-full space-y-12">
-        {/* Progress Indicator */}
-        <motion.div
-          variants={fadeUp}
-          initial={false}
-          animate={true}
-          className="w-full bg-surface-container h-1"
-        >
-          <div className={`bg-primary h-1 w-[${activeStep * 33.33}%] transition-all duration-500 ease-in-out`}></div>
-        </motion.div>
-
-        <div className="max-w-container-max mx-auto px-4 md:px-6 py-2 flex justify-between items-center font-caption text-caption text-secondary">
-          <span>Step 1: Service</span>
-          <span>Step 2: Time</span>
-          <span>Step 3: Details</span>
-        </div>
-
-        {/* Trust Badge */}
+      <main className="flex-grow pt-24 md:pt-32 pb-32 md:pb-40 px-4 md:px-6 max-w-3xl mx-auto w-full space-y-12">
+                {/* Trust Badge */}
         <motion.div
           variants={fadeUp}
           initial={false}
@@ -126,7 +136,7 @@ export default function BookAppointment() {
         </motion.div>
 
         {/* Form Container */}
-        <form className="space-y-12" onSubmit={handleSubmit}>
+        <form id="appointment-form" className="space-y-12" onSubmit={handleSubmit}>
           {/* Section 1: Service Selection */}
           <motion.div
             key="service-section"
@@ -148,7 +158,11 @@ export default function BookAppointment() {
               >
                 <label
                   htmlFor="service-cosmetic"
-                  className="flex items-start p-4 border border-outline-variant rounded-xl cursor-pointer hover:bg-surface-container-low transition-colors h-full group"
+                  className={`flex items-start p-4 border rounded-xl cursor-pointer transition-colors h-full group ${
+                    formData.service === 'cosmetic' 
+                      ? 'border-primary bg-primary/5 shadow-sm' 
+                      : 'border-outline-variant hover:bg-surface-container-low'
+                  }`}
                 >
                   <span className="material-symbols-outlined text-secondary mr-4 mt-1 group-hover:text-primary transition-colors">
                     auto_awesome
@@ -167,7 +181,8 @@ export default function BookAppointment() {
                     id="service-cosmetic"
                     name="service"
                     type="radio"
-                    value="cosmetic"
+                        required
+                        value="cosmetic"
                     onChange={handleChange}
                   />
                 </label>
@@ -182,7 +197,11 @@ export default function BookAppointment() {
               >
                 <label
                   htmlFor="service-implant"
-                  className="flex items-start p-4 border border-outline-variant rounded-xl cursor-pointer hover:bg-surface-container-low transition-colors h-full group"
+                  className={`flex items-start p-4 border rounded-xl cursor-pointer transition-colors h-full group ${
+                    formData.service === 'implant' 
+                      ? 'border-primary bg-primary/5 shadow-sm' 
+                      : 'border-outline-variant hover:bg-surface-container-low'
+                  }`}
                 >
                   <span className="material-symbols-outlined text-secondary mr-4 mt-1 group-hover:text-primary transition-colors">
                     dentistry
@@ -201,7 +220,8 @@ export default function BookAppointment() {
                     id="service-implant"
                     name="service"
                     type="radio"
-                    value="implant"
+                        required
+                        value="implant"
                     onChange={handleChange}
                   />
                 </label>
@@ -216,7 +236,11 @@ export default function BookAppointment() {
               >
                 <label
                   htmlFor="service-ortho"
-                  className="flex items-start p-4 border border-outline-variant rounded-xl cursor-pointer hover:bg-surface-container-low transition-colors h-full group"
+                  className={`flex items-start p-4 border rounded-xl cursor-pointer transition-colors h-full group ${
+                    formData.service === 'ortho' 
+                      ? 'border-primary bg-primary/5 shadow-sm' 
+                      : 'border-outline-variant hover:bg-surface-container-low'
+                  }`}
                 >
                   <span className="material-symbols-outlined text-secondary mr-4 mt-1 group-hover:text-primary transition-colors">
                     align_horizontal_center
@@ -235,7 +259,8 @@ export default function BookAppointment() {
                     id="service-ortho"
                     name="service"
                     type="radio"
-                    value="ortho"
+                        required
+                        value="ortho"
                     onChange={handleChange}
                   />
                 </label>
@@ -250,7 +275,11 @@ export default function BookAppointment() {
               >
                 <label
                   htmlFor="service-general"
-                  className="flex items-start p-4 border border-outline-variant rounded-xl cursor-pointer hover:bg-surface-container-low transition-colors h-full group"
+                  className={`flex items-start p-4 border rounded-xl cursor-pointer transition-colors h-full group ${
+                    formData.service === 'general' 
+                      ? 'border-primary bg-primary/5 shadow-sm' 
+                      : 'border-outline-variant hover:bg-surface-container-low'
+                  }`}
                 >
                   <span className="material-symbols-outlined text-secondary mr-4 mt-1 group-hover:text-primary transition-colors">
                     health_and_safety
@@ -269,7 +298,8 @@ export default function BookAppointment() {
                     id="service-general"
                     name="service"
                     type="radio"
-                    value="general"
+                        required
+                        value="general"
                     onChange={handleChange}
                   />
                 </label>
@@ -282,7 +312,7 @@ export default function BookAppointment() {
             key="schedule-section"
             variants={fadeUp}
             initial={false}
-            animate={activeStep >= 2}
+            animate={true}
             className="space-y-6"
           >
             <h2 className="font-headline-sm text-headline-sm text-primary border-b border-surface-variant pb-2">
@@ -294,7 +324,7 @@ export default function BookAppointment() {
                 key="date-picker"
                 variants={fadeUp}
                 initial={false}
-                animate={activeStep >= 2}
+                animate={true}
               >
                 <label className="block font-label-bold text-label-bold text-primary mb-2">
                   Select Date
@@ -305,6 +335,8 @@ export default function BookAppointment() {
                     className="w-full bg-transparent border-none focus:ring-0 text-on-surface font-body-md"
                     type="date"
                     value={formData.date}
+                    min={new Date().toISOString().split('T')[0]}
+                    required
                     onChange={(e) => setFormData(prev => ({ ...prev, date: e.target.value }))}
                   />
                 </div>
@@ -315,7 +347,7 @@ export default function BookAppointment() {
                 key="time-slots"
                 variants={fadeUp}
                 initial={false}
-                animate={activeStep >= 2}
+                animate={true}
               >
                 <label className="block font-label-bold text-label-bold text-primary mb-3">
                   Preferred Time
@@ -325,7 +357,7 @@ export default function BookAppointment() {
                     key="time-morning"
                     variants={staggerChild}
                     initial={false}
-                    animate={activeStep >= 2}
+                    animate={true}
                   >
                     <div>
                       <input
@@ -334,11 +366,16 @@ export default function BookAppointment() {
                         id="time-morning"
                         name="time"
                         type="radio"
+                        required
                         value="morning"
                         onChange={handleChange}
-                      />
+                  />
                       <label
-                        className="inline-block px-5 py-2 border border-outline-variant rounded-full font-label-bold text-label-bold text-secondary cursor-pointer hover:bg-surface-container transition-colors"
+                        className={`inline-block px-5 py-2 border rounded-full font-label-bold text-label-bold cursor-pointer transition-colors ${
+                          formData.time === 'morning'
+                            ? 'border-primary bg-primary text-on-primary shadow-sm'
+                            : 'border-outline-variant text-secondary hover:bg-surface-container'
+                        }`}
                         htmlFor="time-morning"
                       >
                         Morning (8am - 12pm)
@@ -350,7 +387,7 @@ export default function BookAppointment() {
                     key="time-afternoon"
                     variants={staggerChild}
                     initial={false}
-                    animate={activeStep >= 2}
+                    animate={true}
                   >
                     <div>
                       <input
@@ -359,11 +396,16 @@ export default function BookAppointment() {
                         id="time-afternoon"
                         name="time"
                         type="radio"
+                        required
                         value="afternoon"
                         onChange={handleChange}
-                      />
+                  />
                       <label
-                        className="inline-block px-5 py-2 border border-outline-variant rounded-full font-label-bold text-label-bold text-secondary cursor-pointer hover:bg-surface-container transition-colors"
+                        className={`inline-block px-5 py-2 border rounded-full font-label-bold text-label-bold cursor-pointer transition-colors ${
+                          formData.time === 'afternoon'
+                            ? 'border-primary bg-primary text-on-primary shadow-sm'
+                            : 'border-outline-variant text-secondary hover:bg-surface-container'
+                        }`}
                         htmlFor="time-afternoon"
                       >
                         Afternoon (12pm - 4pm)
@@ -375,7 +417,7 @@ export default function BookAppointment() {
                     key="time-evening"
                     variants={staggerChild}
                     initial={false}
-                    animate={activeStep >= 2}
+                    animate={true}
                   >
                     <div>
                       <input
@@ -384,11 +426,16 @@ export default function BookAppointment() {
                         id="time-evening"
                         name="time"
                         type="radio"
+                        required
                         value="evening"
                         onChange={handleChange}
-                      />
+                  />
                       <label
-                        className="inline-block px-5 py-2 border border-outline-variant rounded-full font-label-bold text-label-bold text-secondary cursor-pointer hover:bg-surface-container transition-colors"
+                        className={`inline-block px-5 py-2 border rounded-full font-label-bold text-label-bold cursor-pointer transition-colors ${
+                          formData.time === 'evening'
+                            ? 'border-primary bg-primary text-on-primary shadow-sm'
+                            : 'border-outline-variant text-secondary hover:bg-surface-container'
+                        }`}
                         htmlFor="time-evening"
                       >
                         Evening (4pm - 7pm)
@@ -405,7 +452,7 @@ export default function BookAppointment() {
             key="details-section"
             variants={fadeUp}
             initial={false}
-            animate={activeStep === 3}
+            animate={true}
             className="space-y-6"
           >
             <h2 className="font-headline-sm text-headline-sm text-primary border-b border-surface-variant pb-2">
@@ -416,7 +463,7 @@ export default function BookAppointment() {
                 key="name-field"
                 variants={staggerChild}
                 initial={false}
-                animate={activeStep === 3}
+                animate={true}
               >
                 <label className="font-label-bold text-label-bold text-primary block" htmlFor="name">
                   Full Name
@@ -424,10 +471,12 @@ export default function BookAppointment() {
                 <input
                   className="w-full border-outline-variant rounded-lg bg-surface px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary transition-colors text-on-surface"
                   id="name"
+                  name="name"
                   placeholder="John Doe"
                   value={formData.name}
                   onChange={handleChange}
                   type="text"
+                  required
                 />
               </motion.div>
 
@@ -435,7 +484,7 @@ export default function BookAppointment() {
                 key="phone-field"
                 variants={staggerChild}
                 initial={false}
-                animate={activeStep === 3}
+                animate={true}
               >
                 <label className="font-label-bold text-label-bold text-primary block" htmlFor="phone">
                   Phone Number
@@ -443,10 +492,12 @@ export default function BookAppointment() {
                 <input
                   className="w-full border-outline-variant rounded-lg bg-surface px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary transition-colors text-on-surface"
                   id="phone"
+                  name="phone"
                   placeholder="+1 (555) 000-0000"
                   value={formData.phone}
                   onChange={handleChange}
                   type="tel"
+                  required
                 />
               </motion.div>
 
@@ -454,7 +505,7 @@ export default function BookAppointment() {
                 key="email-field"
                 variants={staggerChild}
                 initial={false}
-                animate={activeStep === 3}
+                animate={true}
                 className="md:col-span-2"
               >
                 <label className="font-label-bold text-label-bold text-primary block" htmlFor="email">
@@ -463,10 +514,12 @@ export default function BookAppointment() {
                 <input
                   className="w-full border-outline-variant rounded-lg bg-surface px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary transition-colors text-on-surface"
                   id="email"
+                  name="email"
                   placeholder="john@example.com"
                   value={formData.email}
                   onChange={handleChange}
                   type="email"
+                  required
                 />
               </motion.div>
             </div>
@@ -511,13 +564,11 @@ export default function BookAppointment() {
             By confirming, you agree to our <Link href="/privacy-policy" className="underline text-primary">Privacy Policy</Link>.
           </div>
           <button
-            type="button"
-            className={`w-full sm:w-auto bg-primary-container text-on-primary px-8 py-3 rounded-full font-label-bold text-label-bold hover:bg-primary transition-colors shadow-sm whitespace-nowrap ${
-              activeStep === 3 ? 'pulse' : ''
-            }`}
-            onClick={activeStep === 3 ? handleSubmit : nextStep}
+            type="submit"
+            form="appointment-form"
+            className="w-full sm:w-auto bg-primary text-on-primary px-8 py-3 rounded-full font-label-bold text-label-bold hover:bg-primary-container transition-colors shadow-sm whitespace-nowrap"
           >
-            {activeStep === 3 ? 'Confirm Appointment Request' : 'Next Step'}
+            Proceed to Appointment
           </button>
         </div>
       </motion.div>

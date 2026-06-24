@@ -59,7 +59,12 @@ module.exports = {
         'surface-variant': '#e0e3e5',
         // Accent colors
         'champagne': '#C5A059',
-        'dental-blue': '#E3F2FD',
+        'dental-blue': 'hsl(var(--dental-blue))',
+        'dental-light-blue': 'hsl(var(--dental-light-blue))',
+        'dental-green': 'hsl(var(--dental-green))',
+        'dental-green-light': 'hsl(var(--dental-green-light))',
+        'dental-gold': 'hsl(var(--dental-gold))',
+        'dental-silver': 'hsl(var(--dental-silver))',
       },
       borderRadius: {
         'sm': '0.125rem',
