@@ -5,6 +5,8 @@ import Footer from '@/components/footer';
 import StickyWhatsApp from '@/components/sticky-whatsapp';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { fadeInUp, staggerContainer, slideInLeft } from '@/lib/animations';
 
 export default function Services() {
   const [headerScrolled, setHeaderScrolled] = useState(false);
@@ -31,23 +33,23 @@ export default function Services() {
 <div className="absolute inset-0 bg-gradient-to-r from-surface via-surface/90 to-surface/20"></div>
 </div>
 <div className="relative z-10 max-w-container-max mx-auto w-full">
-<div className="max-w-2xl">
-<div className="inline-flex items-center gap-2 px-3 py-1 bg-primary-fixed/30 rounded-full mb-6">
+<motion.div variants={staggerContainer()} initial="initial" animate="animate" className="max-w-2xl">
+<motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-3 py-1 bg-primary-fixed/30 rounded-full mb-6">
 <span className="material-symbols-outlined text-primary text-[16px]">verified</span>
 <span className="font-label-bold text-caption text-primary">COMPREHENSIVE CARE</span>
-</div>
-<h1 className="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-6">Precision Dental Services</h1>
-<p className="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-xl">
+</motion.div>
+<motion.h1 variants={fadeInUp} className="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-6">Precision Dental Services</motion.h1>
+<motion.p variants={fadeInUp} className="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-xl">
                         Experience uncompromising oral care in a serene, boutique environment. We combine clinical purity with advanced technology to deliver lasting results.
-                    </p>
-<div className="flex flex-col sm:flex-row gap-4">
+                    </motion.p>
+<motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4">
 <a className="bg-primary text-on-primary font-label-bold text-label-bold px-8 py-4 rounded-full text-center hover:bg-primary/90 transition-colors" href="#book">Book Consultation</a>
 <a className="border border-primary text-primary font-label-bold text-label-bold px-8 py-4 rounded-full text-center hover:bg-primary-fixed/20 transition-colors flex items-center justify-center gap-2" href="#services">
                             Explore Treatments
                             <span className="material-symbols-outlined">arrow_downward</span>
 </a>
-</div>
-</div>
+</motion.div>
+</motion.div>
 </div>
 </section>
 {/**/}
@@ -105,7 +107,7 @@ export default function Services() {
 </ul>
 <a className="inline-block border border-primary text-primary font-label-bold text-label-bold px-6 py-3 rounded-full hover:bg-primary-fixed/10 transition-colors" href="#book">Consult an Implant Specialist</a>
 </div>
-</div>
+</motion.div>
 </section>
 {/**/}
 <section className="py-section-padding-mobile md:py-section-padding-desktop bg-primary text-on-primary px-margin-mobile md:px-gutter" id="book">
