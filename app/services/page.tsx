@@ -82,7 +82,7 @@ export default function Services() {
 {/**/}
 {/**/}
 <section className="py-section-padding-mobile md:py-section-padding-desktop px-margin-mobile md:px-gutter max-w-container-max mx-auto" id="implants">
-<div className="grid md:grid-cols-2 gap-12 md:gap-24 items-center">
+<motion.div variants={slideInLeft} initial="initial" whileInView="animate" viewport={{ once: true, margin: "-50px" }} className="grid md:grid-cols-2 gap-12 md:gap-24 items-center">
 <div className="order-2 md:order-1 relative rounded-xl overflow-hidden aspect-[4/3] ambient-shadow">
 <div className="bg-cover bg-center w-full h-full" data-alt="A close up, stylized and highly detailed 3D render of a premium dental implant screw integrating flawlessly with a white ceramic tooth crown. The background is a clean, sterile clinical blue environment. The lighting is soft but emphasizes the metallic precision of the titanium screw and the natural translucency of the ceramic tooth. Mood is advanced, medical, and high-end." style={{"backgroundImage":"url('https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&q=80')"}}></div>
 </div>

@@ -81,7 +81,7 @@ export default function Home() {
 <section className="py-section-padding-mobile md:py-section-padding-desktop bg-surface-bright">
 <div className="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
 <div className="text-center mb-12 md:mb-16">
-<h2 className="font-headline-md text-headline-md text-primary mb-4">Comprehensive Dental Solutions</motion.h2>
+<h2 className="font-headline-md text-headline-md text-primary mb-4">Comprehensive Dental Solutions</h2>
 <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Tailored treatments utilizing state-of-the-art technology for optimal oral health and aesthetic perfection.</p>
 </div>
 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -175,7 +175,7 @@ export default function Home() {
 {/**/}
 <div className="absolute inset-0 opacity-10" style={{"backgroundImage":"radial-gradient(circle at 2px 2px, white 1px, transparent 0)","backgroundSize":"32px 32px"}}></div>
 <motion.div variants={staggerContainer()} initial="initial" whileInView="animate" viewport={{ once: true }} className="max-w-container-max mx-auto px-margin-mobile md:px-gutter relative z-10 text-center">
-<motion.h2 variants={fadeInUp} className="font-headline-md text-headline-md mb-6 max-w-2xl mx-auto">Ready to Transform Your Smile?</h2>
+<motion.h2 variants={fadeInUp} className="font-headline-md text-headline-md mb-6 max-w-2xl mx-auto">Ready to Transform Your Smile?</motion.h2>
 <motion.p variants={fadeInUp} className="font-body-lg text-body-lg text-on-primary/80 mb-10 max-w-xl mx-auto">
                     Schedule a private consultation today and take the first step towards achieving optimal oral health and aesthetic perfection.
                 </motion.p>
